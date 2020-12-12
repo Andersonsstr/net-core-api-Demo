@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Controller\" />
+    <Folder Include="src\DAO\" />
+    <Folder Include="src\Helper\" />
+    <Folder Include="src\Services\" />
+  </ItemGroup>
+
+</Project>
