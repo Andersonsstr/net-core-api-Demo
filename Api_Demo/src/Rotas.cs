@@ -13,25 +13,36 @@ namespace Api_Demo.src
     [ApiController]
     public class Rotas : Controller
     {
-        [HttpPost]
-        [Route("/teste")]
-        public Usuario receiver(object teste)
-        {
-            //dynamic json = new ExpandoObject();
-            //json.nome = "Anderson";
-            //json.idade = "20";
-
-            Usuario usuario = new Usuario("Anderson", "20");
-
-            return usuario;
-        }
-
         [HttpGet]
-        [Route("/")]
+        [Route("/teste")]
         public string receiver()
         {
+            return "Requisição recebida na rota GET com sucesso!";
+        }
 
-            return "Hello World";
+        [HttpPost]
+        [Route("/teste")]
+        public string receiver(object teste)
+        {
+            return "Requisição recebida na rota Post com sucesso";
+        }
+
+        [HttpPost]
+        [Route("/Soma")]
+        public dynamic receiver(requisicaoRecebida objUsuario)
+        {
+            dynamic json = new ExpandoObject();
+
+            try
+            {
+                int soma = objUsuario.numero1 + objUsuario.numero2;             
+                json.resultado = $"O resultado da soma é {soma}";
+            }
+            catch (Exception ex)
+            {
+                json.Erro = "Erro: " + ex.Message;
+            }
+            return json;
         }
     }
 }
