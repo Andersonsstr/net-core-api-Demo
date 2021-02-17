@@ -9,5 +9,6 @@ namespace Api_Demo.src.Model
     {
         public int numero1 { get; set; }
         public int numero2 { get; set; }
+        public string nome { get; set; }
     }
 }

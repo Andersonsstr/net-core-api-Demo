@@ -22,9 +22,11 @@ namespace Api_Demo.src
 
         [HttpPost]
         [Route("/teste")]
-        public string receiver(object teste)
+        public string receiverTeste(requisicaoRecebida teste)
         {
-            return "Requisição recebida na rota Post com sucesso";
+            
+            string nome = teste.nome;
+            return "Requisição recebida na rota Post com sucesso " + nome;
         }
 
         [HttpPost]
